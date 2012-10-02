@@ -107,7 +107,7 @@ sendmail-whois[
     dest     = fail2ban@%s, 
     sender   = www@%s
     ]
-logpath  = /var/log/maillog
+logpath  = /usr/local/psa/var/log/maillog
 maxretry = 5
 
 #############################################################
@@ -120,6 +120,7 @@ maxretry = 5
 failregex = reject: RCPT from (.*)\[\]: 554
 reject: RCPT from (.*)\[\]: 550
 reject: RCPT from (.*)\[\]: 450
+^(.)+smtp_auth: FAILED: (.*) \[<HOST>\](.)*$
 
 ignoreregex = 
 
